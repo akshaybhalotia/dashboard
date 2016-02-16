@@ -9,6 +9,7 @@
 #import "PaymentFetcher.h"
 
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 
 static NSString *const PUBLIC_KEY = @"rzp_test_K2AsUEhLAvCUej";
 static NSString *const SECRET = @"CoX0Zrb81Rw7kO2b8PsTu0Ht";
@@ -48,6 +49,7 @@ static NSString *const kPaymentId = @"payment_id";
 		self.manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
 		[self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 		self.manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
 	}
 	return self;
 }
@@ -71,7 +73,9 @@ static NSString *const kPaymentId = @"payment_id";
 	if (skip) {
 		[params setValue:@(skip) forKey:kSkip];
 	}
+    [SVProgressHUD show];
 	[self.manager GET:PAYMENT_LIST parameters:(params ? params : nil) progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
 		NSDictionary *result = (NSDictionary *)responseObject;
 		if (result) {
 			NSArray *items = [result objectForKey:kItems];
@@ -92,6 +96,7 @@ static NSString *const kPaymentId = @"payment_id";
 			[self.delegate didFetchPaymentList:nil withError:error];
 		}
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [SVProgressHUD dismiss];
 		[self.delegate didFetchPaymentList:nil withError:error];
 	}];
 	[self.manager.requestSerializer clearAuthorizationHeader];
@@ -104,7 +109,9 @@ static NSString *const kPaymentId = @"payment_id";
     if (amount) {
         [params setValue:@(amount) forKey:kAmount];
     }
+    [SVProgressHUD show];
     [self.manager POST:[NSString stringWithFormat:REFUND, paymentId] parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
         NSDictionary *result = (NSDictionary *)responseObject;
         if (result) {
             Refund *payment = [Refund new];
@@ -119,6 +126,7 @@ static NSString *const kPaymentId = @"payment_id";
             [self.delegate didRefundPaymentWithError:error];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [SVProgressHUD dismiss];
         [self.delegate didRefundPaymentWithError:error];
     }];
     [self.manager.requestSerializer clearAuthorizationHeader];
@@ -131,7 +139,9 @@ static NSString *const kPaymentId = @"payment_id";
     if (amount) {
         [params setValue:@(amount) forKey:kAmount];
     }
+    [SVProgressHUD show];
     [self.manager POST:[NSString stringWithFormat:CAPTURE, paymentId] parameters:params progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
         NSDictionary *result = (NSDictionary *)responseObject;
         if (result) {
             CapturedPayment *payment = [CapturedPayment new];
@@ -145,6 +155,7 @@ static NSString *const kPaymentId = @"payment_id";
             [self.delegate didCapturePaymentWithError:error];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [SVProgressHUD dismiss];
         [self.delegate didCapturePaymentWithError:error];
     }];
     [self.manager.requestSerializer clearAuthorizationHeader];
@@ -153,7 +164,9 @@ static NSString *const kPaymentId = @"payment_id";
 -(void)fetchPaymentInfoForPaymentId:(NSString *)paymentId {
     [self.manager.requestSerializer setAuthorizationHeaderFieldWithUsername:PUBLIC_KEY
                                                                    password:SECRET];
+    [SVProgressHUD show];
     [self.manager GET:[NSString stringWithFormat:PAYMENT_DETAILS, paymentId] parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
         NSDictionary *result = (NSDictionary *)responseObject;
         if (result) {
             Payment *payment = [Payment new];
@@ -169,6 +182,7 @@ static NSString *const kPaymentId = @"payment_id";
             [self.delegate didFetchPaymentDetails:nil withError:error];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [SVProgressHUD dismiss];
         [self.delegate didFetchPaymentDetails:nil withError:error];
     }];
     [self.manager.requestSerializer clearAuthorizationHeader];
