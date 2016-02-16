@@ -16,6 +16,9 @@
 		0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DF71C734DC100248F24 /* PaymentListCell.m */; };
 		0F227A7D1C7373DF00BD0CD1 /* PaymentFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F227A791C7373DF00BD0CD1 /* PaymentFetcher.m */; };
 		0F227A7E1C7373DF00BD0CD1 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F227A7C1C7373DF00BD0CD1 /* Payment.m */; };
+		928244391C739FC10011F822 /* PaymentDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 928244381C739FC10011F822 /* PaymentDetailsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		9282443C1C73AB000011F822 /* Refund.m in Sources */ = {isa = PBXBuildFile; fileRef = 9282443B1C73AB000011F822 /* Refund.m */; settings = {ASSET_TAGS = (); }; };
+		9282443F1C73AB7A0011F822 /* CapturedPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9282443E1C73AB7A0011F822 /* CapturedPayment.m */; settings = {ASSET_TAGS = (); }; };
 		AECC170013D562D656CBD77E /* libPods-Dashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059CC8CBF1E7A490AFD4294 /* libPods-Dashboard.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,12 @@
 		0F227A7C1C7373DF00BD0CD1 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
 		57E89503505B5ED49D5ADB61 /* Pods-Dashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.release.xcconfig"; sourceTree = "<group>"; };
 		886EAE848B80646BCFE0ABEB /* Pods-Dashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.debug.xcconfig"; sourceTree = "<group>"; };
+		928244371C739FC10011F822 /* PaymentDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentDetailsViewController.h; sourceTree = "<group>"; };
+		928244381C739FC10011F822 /* PaymentDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentDetailsViewController.m; sourceTree = "<group>"; };
+		9282443A1C73AB000011F822 /* Refund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Refund.h; sourceTree = "<group>"; };
+		9282443B1C73AB000011F822 /* Refund.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Refund.m; sourceTree = "<group>"; };
+		9282443D1C73AB7A0011F822 /* CapturedPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedPayment.h; sourceTree = "<group>"; };
+		9282443E1C73AB7A0011F822 /* CapturedPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedPayment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,8 @@
 				0F084DF41C734D7E00248F24 /* PaymentListViewController.m */,
 				0F084DF61C734DC100248F24 /* PaymentListCell.h */,
 				0F084DF71C734DC100248F24 /* PaymentListCell.m */,
+				928244371C739FC10011F822 /* PaymentDetailsViewController.h */,
+				928244381C739FC10011F822 /* PaymentDetailsViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +132,10 @@
 			children = (
 				0F227A7B1C7373DF00BD0CD1 /* Payment.h */,
 				0F227A7C1C7373DF00BD0CD1 /* Payment.m */,
+				9282443A1C73AB000011F822 /* Refund.h */,
+				9282443B1C73AB000011F822 /* Refund.m */,
+				9282443D1C73AB7A0011F822 /* CapturedPayment.h */,
+				9282443E1C73AB7A0011F822 /* CapturedPayment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,12 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928244391C739FC10011F822 /* PaymentDetailsViewController.m in Sources */,
 				0F227A7E1C7373DF00BD0CD1 /* Payment.m in Sources */,
 				0F084DF51C734D7E00248F24 /* PaymentListViewController.m in Sources */,
 				0F084DDB1C734CE300248F24 /* AppDelegate.m in Sources */,
 				0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */,
 				0F084DD81C734CE300248F24 /* main.m in Sources */,
+				9282443F1C73AB7A0011F822 /* CapturedPayment.m in Sources */,
 				0F227A7D1C7373DF00BD0CD1 /* PaymentFetcher.m in Sources */,
+				9282443C1C73AB000011F822 /* Refund.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

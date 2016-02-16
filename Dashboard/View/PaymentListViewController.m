@@ -8,6 +8,7 @@
 
 #import "PaymentListViewController.h"
 
+#import "PaymentDetailsViewController.h"
 #import "PaymentFetcher.h"
 #import "PaymentListCell.h"
 
@@ -78,6 +79,11 @@ static NSString *const kCellIdentifier = @"paymentCell";
 	cell.dateTimeLabel.text = [dateFormatter stringFromDate:paymentDate];
 	
 	return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    PaymentDetailsViewController *vc = (PaymentDetailsViewController *)segue.destinationViewController;
+    vc.payment = [payments objectAtIndex:[self.tableView indexPathForSelectedRow].row];
 }
 
 @end
