@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		0F084DD81C734CE300248F24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DD71C734CE300248F24 /* main.m */; };
 		0F084DDB1C734CE300248F24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DDA1C734CE300248F24 /* AppDelegate.m */; };
-		0F084DDE1C734CE300248F24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DDD1C734CE300248F24 /* ViewController.m */; };
 		0F084DE11C734CE300248F24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F084DDF1C734CE300248F24 /* Main.storyboard */; };
 		0F084DE31C734CE300248F24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F084DE21C734CE300248F24 /* Assets.xcassets */; };
 		0F084DE61C734CE300248F24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F084DE41C734CE300248F24 /* LaunchScreen.storyboard */; };
+		0F084DF51C734D7E00248F24 /* PaymentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DF41C734D7E00248F24 /* PaymentListViewController.m */; };
+		0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DF71C734DC100248F24 /* PaymentListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		0F084DD71C734CE300248F24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F084DD91C734CE300248F24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F084DDA1C734CE300248F24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F084DDC1C734CE300248F24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0F084DDD1C734CE300248F24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0F084DE01C734CE300248F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F084DE21C734CE300248F24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F084DE51C734CE300248F24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F084DE71C734CE300248F24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F084DF31C734D7E00248F24 /* PaymentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentListViewController.h; sourceTree = "<group>"; };
+		0F084DF41C734D7E00248F24 /* PaymentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentListViewController.m; sourceTree = "<group>"; };
+		0F084DF61C734DC100248F24 /* PaymentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentListCell.h; sourceTree = "<group>"; };
+		0F084DF71C734DC100248F24 /* PaymentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +61,9 @@
 		0F084DD51C734CE300248F24 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				0F084DF21C734D7E00248F24 /* View */,
 				0F084DD91C734CE300248F24 /* AppDelegate.h */,
 				0F084DDA1C734CE300248F24 /* AppDelegate.m */,
-				0F084DDC1C734CE300248F24 /* ViewController.h */,
-				0F084DDD1C734CE300248F24 /* ViewController.m */,
 				0F084DDF1C734CE300248F24 /* Main.storyboard */,
 				0F084DE21C734CE300248F24 /* Assets.xcassets */,
 				0F084DE41C734CE300248F24 /* LaunchScreen.storyboard */,
@@ -77,6 +79,17 @@
 				0F084DD71C734CE300248F24 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F084DF21C734D7E00248F24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F084DF31C734D7E00248F24 /* PaymentListViewController.h */,
+				0F084DF41C734D7E00248F24 /* PaymentListViewController.m */,
+				0F084DF61C734DC100248F24 /* PaymentListCell.h */,
+				0F084DF71C734DC100248F24 /* PaymentListCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F084DDE1C734CE300248F24 /* ViewController.m in Sources */,
+				0F084DF51C734D7E00248F24 /* PaymentListViewController.m in Sources */,
 				0F084DDB1C734CE300248F24 /* AppDelegate.m in Sources */,
+				0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */,
 				0F084DD81C734CE300248F24 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
