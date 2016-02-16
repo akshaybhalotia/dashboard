@@ -14,6 +14,8 @@
 		0F084DE61C734CE300248F24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F084DE41C734CE300248F24 /* LaunchScreen.storyboard */; };
 		0F084DF51C734D7E00248F24 /* PaymentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DF41C734D7E00248F24 /* PaymentListViewController.m */; };
 		0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F084DF71C734DC100248F24 /* PaymentListCell.m */; };
+		0F227A7D1C7373DF00BD0CD1 /* PaymentFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F227A791C7373DF00BD0CD1 /* PaymentFetcher.m */; };
+		0F227A7E1C7373DF00BD0CD1 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F227A7C1C7373DF00BD0CD1 /* Payment.m */; };
 		AECC170013D562D656CBD77E /* libPods-Dashboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0059CC8CBF1E7A490AFD4294 /* libPods-Dashboard.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,10 @@
 		0F084DF41C734D7E00248F24 /* PaymentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentListViewController.m; sourceTree = "<group>"; };
 		0F084DF61C734DC100248F24 /* PaymentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentListCell.h; sourceTree = "<group>"; };
 		0F084DF71C734DC100248F24 /* PaymentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentListCell.m; sourceTree = "<group>"; };
+		0F227A781C7373DF00BD0CD1 /* PaymentFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentFetcher.h; sourceTree = "<group>"; };
+		0F227A791C7373DF00BD0CD1 /* PaymentFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentFetcher.m; sourceTree = "<group>"; };
+		0F227A7B1C7373DF00BD0CD1 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
+		0F227A7C1C7373DF00BD0CD1 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
 		57E89503505B5ED49D5ADB61 /* Pods-Dashboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.release.xcconfig"; sourceTree = "<group>"; };
 		886EAE848B80646BCFE0ABEB /* Pods-Dashboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dashboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dashboard/Pods-Dashboard.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +74,8 @@
 		0F084DD51C734CE300248F24 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				0F227A771C7373DF00BD0CD1 /* Controller */,
+				0F227A7A1C7373DF00BD0CD1 /* Model */,
 				0F084DF21C734D7E00248F24 /* View */,
 				0F084DD91C734CE300248F24 /* AppDelegate.h */,
 				0F084DDA1C734CE300248F24 /* AppDelegate.m */,
@@ -97,6 +105,24 @@
 				0F084DF71C734DC100248F24 /* PaymentListCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0F227A771C7373DF00BD0CD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0F227A781C7373DF00BD0CD1 /* PaymentFetcher.h */,
+				0F227A791C7373DF00BD0CD1 /* PaymentFetcher.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0F227A7A1C7373DF00BD0CD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F227A7B1C7373DF00BD0CD1 /* Payment.h */,
+				0F227A7C1C7373DF00BD0CD1 /* Payment.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		51B276E1C6EC4D5505965B0E /* Frameworks */ = {
@@ -238,10 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F227A7E1C7373DF00BD0CD1 /* Payment.m in Sources */,
 				0F084DF51C734D7E00248F24 /* PaymentListViewController.m in Sources */,
 				0F084DDB1C734CE300248F24 /* AppDelegate.m in Sources */,
 				0F084DF81C734DC100248F24 /* PaymentListCell.m in Sources */,
 				0F084DD81C734CE300248F24 /* main.m in Sources */,
+				0F227A7D1C7373DF00BD0CD1 /* PaymentFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -341,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
